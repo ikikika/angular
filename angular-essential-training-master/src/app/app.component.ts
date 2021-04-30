@@ -2,6 +2,6 @@ import { Component} from '@angular/core'
 
 @Component({
     selector: 'mw-app', // angular will look for this tag in index.html 
-    template: '<h1>My app</h1>'
+    templateUrl: './app.component.html'
 })
 export class AppComponent {}
