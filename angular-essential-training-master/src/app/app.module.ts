@@ -7,10 +7,7 @@ import { MediaItemListComponent } from './media-item-list.component'
 import { FavoriteDirective } from './favorite.directive'
 import { CategoryListPipe } from './category-list.pipe'
 import { MediaItemFormComponent } from './media-item-form.component';
-
-const lookipLists = {
-    mediums: ['Movies', 'Series', 'Cartoons']
-}
+import { lookupListToken, lookupLists } from './providers';
 
 @NgModule({
     imports: [ 
@@ -26,7 +23,7 @@ const lookipLists = {
         CategoryListPipe
     ], // used to make components, directives and pipes available to your module that dun come from another module
     providers: [
-        { provide: 'lookupListToken', useValue: lookipLists}
+        { provide: lookupListToken, useValue: lookupLists}
     ],
     bootstrap: [ AppComponent ], // used for a root module and let Angular know which component or components will be the starting point for bootstrap process // entry point for app code
 })
