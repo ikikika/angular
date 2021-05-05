@@ -53,14 +53,17 @@ export class MediaItemService {
 
       constructor(private http: HttpClient) {}
 
-      get(){
-          return this.http.get<MediaItemsResponse>('mediaItems')
-            .pipe(map(response => {
+      get() {
+        return this.http.get<MediaItemsResponse>('mediaitems')
+          .pipe(
+            map((response: MediaItemsResponse) => {
               return response.mediaItems;
-            }));
+            })
+          );
       }
+    
 
-      add(mediaItem){
+      add(mediaItem) {
         this.mediaItems.push(mediaItem);
       }
 
@@ -72,7 +75,7 @@ export class MediaItemService {
       }
 }
 
-interface MediaItem {
+export interface MediaItem {
   id: number;
   name: string;
   medium: string;
