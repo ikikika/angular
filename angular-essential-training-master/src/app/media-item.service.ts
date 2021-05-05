@@ -9,8 +9,11 @@ export class MediaItemService {
   
       constructor(private http: HttpClient) {}
 
-      get() {
-        return this.http.get<MediaItemsResponse>('mediaitems')
+      get(medium: string) {
+        const getOptions = {
+          params: { medium }
+        }
+        return this.http.get<MediaItemsResponse>('mediaitems', getOptions)
           .pipe(
             map((response: MediaItemsResponse) => {
               return response.mediaItems;
@@ -18,7 +21,6 @@ export class MediaItemService {
           );
       }
     
-
       add(mediaItem){
         return this.http.post('mediaItems', mediaItem);
       }
