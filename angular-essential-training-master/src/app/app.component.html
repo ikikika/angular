@@ -1,15 +1,19 @@
-<h1>My app</h1>
-<p class="description">lorem ipsum dolor sit amet</p>
-<p class="description2">lorem ipsum dolor sit amet</p>
+<nav>
+  <a>
+    <img src="assets/04.png" class="icon" />
+  </a>
+  <a>
+    <img src="assets/03.png" class="icon" />
+  </a>
+  <a>
+    <img src="assets/02.png" class="icon" />
+  </a>
+</nav>
 
-<div>Example of expression context: {{ name }}</div>
-<div>Example of interpolation: {{ 10 + 5 }}</div>
-<div>Expression context can contain functions: {{ wasWatched() }}</div>
-<div [textContent]="name"></div>
-
-<mw-media-item
-  (delete)="onMediaItemDelete($event)"
-  [mediaItem]="firstMediaItem"
-></mw-media-item>
-<mw-media-item-form></mw-media-item-form>
-<mw-media-item-list></mw-media-item-list>
+<section>
+  <header>
+    <h1>Media Watch list</h1>
+    <p class="description">Kepping track of the media i want to watch</p>
+  </header>
+  <router-outlet></router-outlet>
+</section>
